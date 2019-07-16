@@ -13,7 +13,7 @@ fun main() = runBlocking{
 
     println("---------------")
 
-    job.join()
+    job.join()  // join方法会挂起当前线程等待Job完成之后继续执行
 
     println("================")
 }
