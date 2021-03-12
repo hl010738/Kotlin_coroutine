@@ -10,6 +10,8 @@ import kotlin.system.measureTimeMillis
 
 fun main() = runBlocking {
     val elapsed = measureTimeMillis {
+
+        // 顺序等待2个函数执行
         val value1 = intValue1()
         val value2 = intValue2()
 
