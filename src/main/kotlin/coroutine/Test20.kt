@@ -16,6 +16,8 @@ import kotlin.system.measureTimeMillis
 fun main() = runBlocking {
     val elapsed = measureTimeMillis {
 
+        // 使用lazy，async不会马上执行
+        // 而是等待到start才开始执行
         val value1 = async(start = CoroutineStart.LAZY) { intValue1() }
         val value2 = async(start = CoroutineStart.LAZY) { intValue2() }
 
@@ -26,8 +28,11 @@ fun main() = runBlocking {
         value1.start()
         value2.start()
 
-        val result1 = value1.await()
+        println("------------")
+
         val result2 = value2.await()
+        val result1 = value1.await()
+
 
         println("$result1 + $result2 = ${result1 + result2}")
     }
@@ -36,11 +41,13 @@ fun main() = runBlocking {
 }
 
 private suspend fun intValue1(): Int{
+    println("value1")
     delay(2000)
     return 15
 }
 
 private suspend fun intValue2(): Int{
+    println("value2")
     delay(3000)
     return 20
 }
