@@ -17,6 +17,7 @@ fun main() = runBlocking {
     } finally {
         println("computation failed")
     }
+    println("============")
 }
 
 private suspend fun failureComputation(): Int = coroutineScope {
