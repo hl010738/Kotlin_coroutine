@@ -1,4 +1,4 @@
-package coroutine
+package coroutine2
 
 import kotlinx.coroutines.async
 import kotlinx.coroutines.coroutineScope
