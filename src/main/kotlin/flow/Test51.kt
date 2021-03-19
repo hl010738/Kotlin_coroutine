@@ -7,6 +7,8 @@ import kotlinx.coroutines.runBlocking
 
 /*
     Flow exception
+
+    在收集端
  */
 
 fun main() = runBlocking {
