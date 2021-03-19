@@ -16,6 +16,7 @@ import kotlinx.coroutines.runBlocking
     位于flow{}构建器中的代码时可以挂起的
     构建flow的函数无需使用suspend标识符，返回值时用过emit函数返回
     Flow里面的值时通过collect方法来收集的
+    Flow只有调用终止操作(例如：collect) 函数真正开始执行
  */
 
 private fun func1(): Flow<Int> = flow {
